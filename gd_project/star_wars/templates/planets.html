@@ -1,0 +1,10 @@
+<form method="GET">
+  <label for="planets">Select a Planet:</label>
+  <select name="planet_id" class="form-control" id="planets">
+    <option selected disabled>Choose a Planet</option>
+  {% for planet in planets %}
+    <option value="{{ planet.id }}">{{ planet.name }}</option>
+  {% endfor %}
+  </select>
+
+</form>

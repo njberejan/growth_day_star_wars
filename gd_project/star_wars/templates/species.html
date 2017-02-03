@@ -1,0 +1,10 @@
+<form method="GET">
+  <label for="species">Select a Species:</label>
+  <select name="species_id" class="form-control" id="species">
+    <option selected disabled>Choose a Species</option>
+  {% for specie in species %}
+    <option value="{{ specie.id }}">{{ specie.name }}</option>
+  {% endfor %}
+  </select>
+
+</form>

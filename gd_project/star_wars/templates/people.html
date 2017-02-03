@@ -1,0 +1,10 @@
+<form method="GET">
+  <label for="person">Select a Person:</label>
+  <select name="name_id" class="form-control" id="person">
+    <option selected disabled>Choose a Person</option>
+  {% for person in people %}
+    <option value="{{ person.id }}">{{ person.name }}</option>
+  {% endfor %}
+  </select>
+
+</form>

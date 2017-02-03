@@ -3,31 +3,70 @@
   <head>
     <meta charset="utf-8">
     <title>SWAPI</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    {% load star_wars_tags %}
   </head>
-  <body>
-    <div>Hello, World! Star Wars is pretty cool.</div>
 
-    {% for person in people %}
+  <body style="background-color:">
+  <nav class="navbar navbar-inverse">
+    <h1 style="color:yellow;">Star Wars is pretty cool.</h1>
+  </nav>
 
-    <div>
-      Object: {{ person }}
-    </div>
-    <div>
-      Name: {{ person.name }}
-    <div>
-      Skin Color: {{ person.skin_color }}
-    </div>
-    <div>
-      Mass: {{ person.mass }}
-    </div>
-    <div>
-      Height: {{ person.height }}
-    </div>
-    <div>
-      Homeworld: {{ person.homeworld }}
-    </div>
+  <div>
+    <form method="GET">
+      <label for="object_type">Select a thing from Star Wars:</label>
+      <select name="object" class="form-control" id="object_type">
+        <option selected disabled>Choose an Object</option>
+        <option value="person">Person</option>
+        <option value="planet">Planet</option>
+        <option value="starship">Starship</option>
+        <option value="vehicle">Vehicle</option>
+        <option value="species">Species</option>
+      </select>
+      <button type="submit" class="btn btn-xs btn-warning">Use the Force</button>
+    </form>
+  </div>
 
-    {% endfor %}
+  {% show_people %}
+  {% show_planets %}
+  {% show_starships %}
+  {% show_vehicles %}
+  {% show_species %}
 
+
+  <!-- <div class="row">
+
+
+
+      <div class="col-md-3">
+        <form method="GET">
+          <label for="ship">Select a Starship:</label>
+          <select name="starship_id" class="form-control" id="ship">
+            <option selected disabled>Choose a Starship</option>
+          {% for starship in starships %}
+            <option value="{{ starship.id }}">{{ starship.name }}</option>
+          {% endfor %}
+          </select>
+
+        </form>
+      </div>
+
+
+  </div> -->
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title">Results:</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   </body>
 </html>

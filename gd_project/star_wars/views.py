@@ -11,6 +11,9 @@ class MainView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(MainView, self).get_context_data(**kwargs)
-        queryset = swapi.get_all('people')
-        context['people'] = queryset.items
+        context['people'] = Person.objects.all()
+        context['planets'] = Planet.objects.all()
+        context['starships'] = Starship.objects.all()
+        context['vehicles'] = Vehicle.objects.all()
+        context['species'] = Species.objects.all()
         return context
