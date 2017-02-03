@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SWAPI</title>
+  </head>
+  <body>
+    <div>Hello, World! Star Wars is pretty cool.</div>
+
+    {% for person in people %}
+
+    <div>
+      Object: {{ person }}
+    </div>
+    <div>
+      Name: {{ person.name }}
+    <div>
+      Skin Color: {{ person.skin_color }}
+    </div>
+    <div>
+      Mass: {{ person.mass }}
+    </div>
+    <div>
+      Height: {{ person.height }}
+    </div>
+    <div>
+      Homeworld: {{ person.homeworld }}
+    </div>
+
+    {% endfor %}
+
+  </body>
+</html>
